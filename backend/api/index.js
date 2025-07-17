@@ -7,9 +7,10 @@ const app = express();
 
 // Configuración de CORS
 app.use(cors({
-  origin: '*',
+  origin: ['http://localhost:3000', 'https://oukitel-survey-49d8sybdi-rubyssjs-projects.vercel.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 }));
 
 app.use(express.json());
