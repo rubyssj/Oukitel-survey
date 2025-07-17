@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos para pantallas táctiles verticales */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Aumentar tamaño de elementos táctiles para facilitar la interacción */
+button {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Animaciones suaves */
+.transition-all {
+  transition-duration: 300ms;
+}
+
+/* Evitar desplazamiento en pantallas táctiles */
+.overflow-y-auto {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+/* Ocultar barras de desplazamiento pero permitir el scroll */
+.overflow-y-auto::-webkit-scrollbar {
+  width: 4px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-height: 700px) {
+  h1 {
+    font-size: 1.5rem !important;
+  }
+  
+  h2 {
+    font-size: 1.25rem !important;
+  }
+  
+  p {
+    font-size: 1rem !important;
+  }
+  
+  button {
+    font-size: 1rem !important;
+  }
+}

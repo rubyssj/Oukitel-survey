@@ -1,0 +1,160 @@
+/* Estilos específicos para la versión móvil */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ajustes para pantallas táctiles móviles */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Aumentar tamaño de elementos táctiles para facilitar la interacción */
+button {
+  min-height: 36px;
+  min-width: 36px;
+}
+
+/* Animaciones suaves */
+.transition-all {
+  transition-duration: 300ms;
+}
+
+/* Mejorar desplazamiento en pantallas táctiles */
+.overflow-y-auto {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  max-height: 80vh;
+}
+
+/* Ocultar barras de desplazamiento pero permitir el scroll */
+.overflow-y-auto::-webkit-scrollbar {
+  width: 3px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+/* Optimización de imágenes para dispositivos móviles */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 160px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 12px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+}
+
+.image-container-small {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 60px;
+  overflow: hidden;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.image-container img,
+.image-container-small img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* Truncar texto largo */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Estilos para el menú móvil */
+.menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 30;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.menu-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 360px) {
+  h1 {
+    font-size: 1.25rem !important;
+  }
+  
+  h2 {
+    font-size: 1.1rem !important;
+  }
+  
+  p {
+    font-size: 0.9rem !important;
+  }
+  
+  button {
+    font-size: 0.9rem !important;
+  }
+  
+  .p-4 {
+    padding: 0.75rem !important;
+  }
+  
+  .image-container {
+    height: 140px;
+  }
+  
+  .image-container-small {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+/* Ajustes para orientación horizontal en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+  .min-h-screen {
+    min-height: 120vh;
+  }
+  
+  .overflow-y-auto {
+    max-height: 60vh;
+  }
+  
+  .image-container {
+    height: 120px;
+  }
+} 
