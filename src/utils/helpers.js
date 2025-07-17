@@ -24,7 +24,7 @@ export const getDeviceType = () => {
 // Obtener encuestas
 export const getEncuestas = async () => {
   try {
-    const response = await fetch('https://oukitel-survey-49d8sybdi-rubyssjs-projects.vercel.app/api/encuestas');
+    const response = await fetch('https://deploy-vercel-kkibsjp7h-rubyssjs-projects.vercel.app/api/encuestas');
     if (!response.ok) {
       throw new Error('Error al obtener las encuestas');
     }
@@ -193,7 +193,7 @@ export const exportarEncuestasCSV = async () => {
 // Limpiar todas las encuestas
 export const limpiarEncuestas = async () => {
   try {
-    const response = await fetch('https://oukitel-survey-49d8sybdi-rubyssjs-projects.vercel.app/api/encuestas/limpiar', {
+    const response = await fetch('https://deploy-vercel-kkibsjp7h-rubyssjs-projects.vercel.app/api/encuestas/limpiar', {
       method: 'DELETE'
     });
     return response.ok;
