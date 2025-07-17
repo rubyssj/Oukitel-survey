@@ -1,5 +1,5 @@
 // URL base de la API
-const API_URL = 'https://deploy-vercel-kkibsjp7h-rubyssjs-projects.vercel.app/api';
+const API_URL = 'https://oukitel-backend.onrender.com/api';
 
 const encuestaService = {
   crearEncuesta: async (encuestaData) => {
